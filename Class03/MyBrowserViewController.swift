@@ -8,8 +8,11 @@
 
 import UIKit
 
-class MyBrowserViewController: UIViewController {
+class MyBrowserViewController: UIViewController, UITextFieldDelegate {
 
+
+    @IBOutlet weak var btnGoBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,14 +35,35 @@ class MyBrowserViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     // MARK: - Keyboard
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let accept = "abcdeABCDE"
+        let cs = NSCharacterSet(charactersIn: accept).inverted
+        let filters = string.components(separatedBy: cs).joined(separator: "")
+        
+        if( string != filters){
+            return false
+        }
+        
+        let current = textField.text! as NSString
+        let newString: NSString = current.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= 10
+    }
     
     @objc func keyboardWillAppear(notification:NSNotification?) {
         print("keyboardWillAppear")
+        guard let frame = notification?.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+            self.btnGoBottomConstraint.constant = frame.cgRectValue.height;
     }
 
     @objc func keyboardWillDisappear(notification:NSNotification?) {
         print("keyboardWillDisappear")
+        self.btnGoBottomConstraint.constant = 35;
     }
 
 }
