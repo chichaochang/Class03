@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
 class MyBrowserViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var btnGoBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var myWebView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        myWebView.load(URLRequest(url: URL(string: "https://www.google.com")!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
