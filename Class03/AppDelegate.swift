@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UserDefaults.standard.synchronize() 
         // print( "\( UserDefaults.standard.string(forKey: "hi")! )" )
         
+//        print("\( NSHomeDirectory() )")
+        
         return true
     }
 

@@ -17,6 +17,8 @@
 		228C6FE1226437B600786B0C /* Class03UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C6FE0226437B600786B0C /* Class03UITests.swift */; };
 		22A45A43227FDEDC008A356B /* MyBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A45A42227FDEDC008A356B /* MyBrowserViewController.swift */; };
 		22D986C522924A2A0073D96C /* AsyncReponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D986C422924A2A0073D96C /* AsyncReponseDelegate.swift */; };
+		22F8BBC1229B872A003C0862 /* FileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8BBC0229B872A003C0862 /* FileWorker.swift */; };
+		22F8BBC3229B942F003C0862 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8BBC2229B942F003C0862 /* SQLiteWorker.swift */; };
 		B11144B7EAB7AF11A62E8DF2 /* Pods_Class03.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B66C81BEA9A5D9809271E14 /* Pods_Class03.framework */; };
 		D034932EB9208888EE660CE7 /* Pods_Class03Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237C7DC0BB58CEFEB89DCBD /* Pods_Class03Tests.framework */; };
 		DAFA37FCF1204EB5A9D76CCF /* Pods_Class03UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A186AF1D34CD4FF47EC594 /* Pods_Class03UITests.framework */; };
@@ -58,6 +60,8 @@
 		228C6FE2226437B600786B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A45A42227FDEDC008A356B /* MyBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrowserViewController.swift; sourceTree = "<group>"; };
 		22D986C422924A2A0073D96C /* AsyncReponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncReponseDelegate.swift; sourceTree = "<group>"; };
+		22F8BBC0229B872A003C0862 /* FileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWorker.swift; sourceTree = "<group>"; };
+		22F8BBC2229B942F003C0862 /* SQLiteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteWorker.swift; sourceTree = "<group>"; };
 		5237C7DC0BB58CEFEB89DCBD /* Pods_Class03Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Class03Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		761549CE9445F5BB2FA3041B /* Pods-Class03Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Class03Tests.debug.xcconfig"; path = "Target Support Files/Pods-Class03Tests/Pods-Class03Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B66C81BEA9A5D9809271E14 /* Pods_Class03.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Class03.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +136,9 @@
 		228C6FBF226437B400786B0C /* Class03 */ = {
 			isa = PBXGroup;
 			children = (
+				22F8BBC2229B942F003C0862 /* SQLiteWorker.swift */,
 				228C6FC0226437B400786B0C /* AppDelegate.swift */,
+				22F8BBC0229B872A003C0862 /* FileWorker.swift */,
 				228C6FC2226437B400786B0C /* ViewController.swift */,
 				228C6FC4226437B400786B0C /* Main.storyboard */,
 				228C6FC7226437B600786B0C /* Assets.xcassets */,
@@ -337,12 +343,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Class03/Pods-Class03-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,8 +410,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				228C6FC3226437B400786B0C /* ViewController.swift in Sources */,
+				22F8BBC3229B942F003C0862 /* SQLiteWorker.swift in Sources */,
 				22A45A43227FDEDC008A356B /* MyBrowserViewController.swift in Sources */,
 				22D986C522924A2A0073D96C /* AsyncReponseDelegate.swift in Sources */,
+				22F8BBC1229B872A003C0862 /* FileWorker.swift in Sources */,
 				228C6FC1226437B400786B0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
