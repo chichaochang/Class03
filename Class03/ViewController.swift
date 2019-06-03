@@ -15,9 +15,31 @@ class ViewController: UIViewController {
         lbmsg.text = "Hi, XCode"
     }
     
+    @IBAction func onMapClicked(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "myMapSegue", sender: self)
+        }
+    }
     @IBAction func btnMoveM2KClicked(_ sender: Any) {
         
-        performSegue(withIdentifier: "nowM2KSegue", sender: self)
+        let alert = UIAlertController(title: "資訊", message: "YN", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "YES", style: .default, handler: { action in
+            // 因為呼叫外部函數, 所以必須要確認回到main thread執行
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "nowM2KSegue", sender: self)
+            }
+        })
+        alert.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: "NO", style: .default, handler: { action in
+        })
+        alert.addAction(cancelAction)
+
+        
+        present(alert, animated: true, completion: nil)
+        
+        // performSegue(withIdentifier: "nowM2KSegue", sender: self)
     }
     
     override func viewDidLoad() {

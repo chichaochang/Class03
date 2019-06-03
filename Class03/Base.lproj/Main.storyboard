@@ -49,6 +49,14 @@
                                     <action selector="btnMoveM2KClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQB-Zl-AKk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flt-qQ-Db8">
+                                <rect key="frame" x="172" y="551" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="toMap"/>
+                                <connections>
+                                    <action selector="onMapClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOO-od-Mqc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,11 +65,12 @@
                     <connections>
                         <outlet property="lbmsg" destination="nfp-7Y-ONa" id="Hcn-qc-IK4"/>
                         <segue destination="Lzl-9Z-aPY" kind="show" identifier="nowM2KSegue" id="5rV-CS-oRu"/>
+                        <segue destination="19R-pE-o2M" kind="show" identifier="myMapSegue" id="T3G-L2-A5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715.94202898550725" y="196.875"/>
+            <point key="canvasLocation" x="714.49275362318849" y="196.875"/>
         </scene>
         <!--My Browser View Controller-->
         <scene sceneID="Gxs-A7-vt4">
@@ -143,6 +152,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKp-Tp-Jg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1792.753623188406" y="667.63392857142856"/>
+        </scene>
+        <!--Mymap View Controller-->
+        <scene sceneID="bSi-pi-jTf">
+            <objects>
+                <viewController id="19R-pE-o2M" customClass="MymapViewController" customModule="Class03" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ov-yD-hTY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-ww-dBX">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ddh-qK-Uvs"/>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="pkn-ww-dBX" id="7SZ-sx-NSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ad3-rk-1EY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="1321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p1I-nC-rQ3">
