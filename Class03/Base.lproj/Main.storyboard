@@ -46,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="B"/>
                                 <connections>
-                                    <segue destination="Lzl-9Z-aPY" kind="show" id="GHE-tD-smP"/>
+                                    <action selector="btnMoveM2KClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQB-Zl-AKk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +56,7 @@
                     <navigationItem key="navigationItem" id="Cie-Tw-5LY"/>
                     <connections>
                         <outlet property="lbmsg" destination="nfp-7Y-ONa" id="Hcn-qc-IK4"/>
+                        <segue destination="Lzl-9Z-aPY" kind="show" identifier="nowM2KSegue" id="5rV-CS-oRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,13 +123,19 @@
             </objects>
             <point key="canvasLocation" x="1792.753623188406" y="-11.383928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="mL2-u4-EnP">
             <objects>
-                <viewController id="Lzl-9Z-aPY" sceneMemberID="viewController">
+                <viewController id="Lzl-9Z-aPY" customClass="ImageViewController" customModule="Class03" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Se1-N8-tzb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M2K" translatesAutoresizingMaskIntoConstraints="NO" id="gWm-3y-6bK">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="LiN-cM-my3"/>
                     </view>
@@ -156,4 +163,7 @@
             <point key="canvasLocation" x="-194.20289855072465" y="196.875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="M2K" width="891" height="599"/>
+    </resources>
 </document>

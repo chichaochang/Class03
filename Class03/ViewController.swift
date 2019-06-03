@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     @IBAction func btnpushclicked(_ sender: Any) {
         lbmsg.text = "Hi, XCode"
     }
+    
+    @IBAction func btnMoveM2KClicked(_ sender: Any) {
+        
+        performSegue(withIdentifier: "nowM2KSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,6 +30,13 @@ class ViewController: UIViewController {
         let result : String = worker.readFromFile(fileName: "info.txt", tag: 0)
         
         print(result)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if( segue.identifier == "nowM2KSegue"){
+            let vc = segue.destination as! ImageViewController
+            vc.index = 5
+        }
     }
 
 
